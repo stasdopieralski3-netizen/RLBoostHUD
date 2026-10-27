@@ -186,7 +186,7 @@ if event == "UpdateState":
                         data = msg.get("Data") or {}
 
                         if isinstance(data, dict):
-                            players = data.get("Players")
+                             self.q.put(("event", "PLAYER DATA: " + str(data)[:250]))
 
                             if isinstance(players, list):
                                 self.q.put(("players", players))
