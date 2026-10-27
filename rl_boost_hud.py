@@ -127,8 +127,8 @@ class HUD:
                         if isinstance(data.get('Players'),list):
                             self.q.put(('players',data['Players']))
                 ws.close()
-            except Exception:
-                pass
+            except Exception as e:
+                self.q.put(('status', 'Connection error: ' + str(e)))
             self.q.put(('connected',False))
             for _ in range(20):
                 if not self.running:return
