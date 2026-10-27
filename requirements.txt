@@ -1,0 +1,2 @@
+websocket-client>=1.8,<2
+pyinstaller>=6,<7
