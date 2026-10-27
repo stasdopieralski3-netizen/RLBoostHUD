@@ -128,12 +128,12 @@ class HUD:
                             self.q.put(('players',data['Players']))
                 ws.close()
             except Exception as e:
-                except Exception as e:
+                            except Exception as e:
                 self.q.put(('connected', False))
                 self.q.put(('status', 'ERROR: ' + str(e)))
             for _ in range(20):
-            for _ in range(20):
-                if not self.running:return
+                if not self.running:
+                    return
                 time.sleep(.1)
     def poll(self):
         latest=None
