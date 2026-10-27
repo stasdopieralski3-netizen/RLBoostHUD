@@ -177,7 +177,9 @@ class HUD:
                         continue
 
                     event = msg.get("Event", "Unknown")
-                    self.q.put(("event", str(event)))
+self.q.put(("event", str(event)))
+if event == "UpdateState":
+    self.q.put(("event", "UpdateState keys: " + str(list((msg.get("Data") or {}).keys()))))
 
                     if event == "UpdateState":
                         data = msg.get("Data") or {}
